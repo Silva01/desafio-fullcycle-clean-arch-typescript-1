@@ -1,9 +1,8 @@
-import ProductInput from "../value-object/product.input";
-import ProductOutput from "../value-object/product.output";
+import ProductDto from "../value-object/product.dto";
 
 export default interface ProductRepositoryInterface {
-    create(product: ProductInput): Promise<ProductOutput>;
-    update(product: ProductInput): Promise<ProductOutput>;
-    find(id: number): Promise<ProductOutput>;
-    findAll(): Promise<ProductOutput[]>;
+    create(product: ProductDto): Promise<void>;
+    update(product: ProductDto): Promise<void>;
+    find(id: number): Promise<ProductDto>;
+    findAll(): Promise<ProductDto[]>;
 }

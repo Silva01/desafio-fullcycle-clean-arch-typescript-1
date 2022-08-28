@@ -5,7 +5,7 @@ describe('Unit test for create product', () => {
     const dateTest = new Date();
 
     const input = {
-        id: null,
+        id: 1,
         name: "Test",
         description: "Test description",
         status: "Test status",

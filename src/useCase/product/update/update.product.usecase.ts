@@ -1,6 +1,5 @@
 import ProductRepositoryInterface from "../../../domain/product/repository/product.repository.interface";
-import ProductInput from "../../../domain/product/value-object/product.input";
-import ProductOutput from "../../../domain/product/value-object/product.output";
+import ProductDto from "../../../domain/product/value-object/product.dto";
 
 export default class UpdateProductUseCase {
     private repository: ProductRepositoryInterface;
@@ -9,7 +8,8 @@ export default class UpdateProductUseCase {
         this.repository = repository;
     }
 
-    async updated(product: ProductInput) : Promise<ProductOutput> {
-        return this.repository.update(product);
+    async updated(product: ProductDto) : Promise<ProductDto> {
+        this.repository.update(product);
+        return product;
     }
 }

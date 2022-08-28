@@ -1,5 +1,5 @@
 import ProductRepositoryInterface from "../../../domain/product/repository/product.repository.interface";
-import ProductOutput from "../../../domain/product/value-object/product.output";
+import ProductDto from "../../../domain/product/value-object/product.dto";
 
 export default class ListProductUseCase {
     private repository: ProductRepositoryInterface;
@@ -8,7 +8,7 @@ export default class ListProductUseCase {
         this.repository = repository;
     }
 
-    findAll(): Promise<ProductOutput[]> {
+    findAll(): Promise<ProductDto[]> {
         return this.repository.findAll()
     }
 }

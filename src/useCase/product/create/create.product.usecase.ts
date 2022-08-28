@@ -1,6 +1,5 @@
 import ProductRepositoryInterface from "../../../domain/product/repository/product.repository.interface";
-import ProductInput from "../../../domain/product/value-object/product.input";
-import ProductOutput from "../../../domain/product/value-object/product.output";
+import ProductDto from "../../../domain/product/value-object/product.dto";
 
 export default class CreateProductUsecase {
 
@@ -10,7 +9,8 @@ export default class CreateProductUsecase {
         this.repository = repository;
     }
 
-    async create(input: ProductInput): Promise<ProductOutput> {
-        return this.repository.create(input)
+    async create(input: ProductDto): Promise<ProductDto> {
+        await this.repository.create(input)
+        return input;
     }
 }
